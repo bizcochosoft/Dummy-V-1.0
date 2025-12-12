@@ -15,6 +15,7 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [input]
 
 derecha={
@@ -38,6 +39,8 @@ saltar={
 
 =======
 >>>>>>> 86daf9c935bed965d7583e75179136f63b34840c
+=======
+>>>>>>> refs/remotes/origin/main
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
