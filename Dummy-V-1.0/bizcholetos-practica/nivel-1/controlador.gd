@@ -13,8 +13,9 @@ func _process(_delta):
 		add_child(ESCENA_FINAL)
 		get_tree().change_scene_to_packed(ESCENA_FINAL)
 
-func final_de_partida ():
+func victoria ():
+	ESCENA_FINAL.set_title("HAS GANADO")
 	add_child(ESCENA_FINAL)
 
 func _on_area_2d_body_entered(_body):
-	final_de_partida()
+	victoria()
