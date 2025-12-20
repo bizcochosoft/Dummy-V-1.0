@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=3 uid="uid://c65plvka3tujn"]
+
+[ext_resource type="Script" uid="uid://dc2rf21c06qtk" path="res://nivel-1/camera_2d.gd" id="1_eeeqi"]
+[ext_resource type="PackedScene" uid="uid://bmo5ynnb2jb0c" path="res://personaje-carpeta/personaje.tscn" id="2_tb7lt"]
+[ext_resource type="PackedScene" uid="uid://ducrvpeiv666e" path="res://plataforma-carpeta/plataforma.tscn" id="3_d6chm"]
+[ext_resource type="Script" uid="uid://daoivsrmi2fxv" path="res://nivel-1/controlador.gd" id="4_fcw67"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_eeeqi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tb7lt"]
+size = Vector2(1.0077522, 0.9906565)
+
+[node name="escena-inicial" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("objeto_a_seguir")]
+position = Vector2(571, 283)
+scale = Vector2(0.43601936, 1e-05)
+zoom = Vector2(0.8, 0.8)
+limit_left = -800
+limit_right = 2150
+limit_bottom = 750
+script = ExtResource("1_eeeqi")
+objeto_a_seguir = NodePath("../Personaje")
+
+[node name="llegada" type="Sprite2D" parent="."]
+modulate = Color(0, 0.6431373, 0, 1)
+light_mask = 4
+position = Vector2(642, -1394.0001)
+scale = Vector2(64.5, 53.5)
+texture = SubResource("CanvasTexture_eeeqi")
+
+[node name="Area2D" type="Area2D" parent="llegada"]
+light_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="llegada/Area2D"]
+position = Vector2(-0.007753372, -0.009344101)
+scale = Vector2(1, 0.99999976)
+shape = SubResource("RectangleShape2D_tb7lt")
+
+[node name="plataforma" parent="." instance=ExtResource("3_d6chm")]
+position = Vector2(394.00003, 370)
+scale = Vector2(1.4000006, 0.9200006)
+
+[node name="Personaje" parent="." instance=ExtResource("2_tb7lt")]
+visibility_layer = 6
+position = Vector2(563, 169)
+
+[node name="Controlador" type="Node2D" parent="."]
+script = ExtResource("4_fcw67")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="plataforma" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(799, -673)
+
+[node name="plataforma2" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(1001, 242)
+
+[node name="plataforma3" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(1547, -1)
+
+[node name="plataforma4" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(476, -251)
+
+[node name="plataforma5" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(93, 75)
+
+[node name="plataforma6" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(1117, -333)
+
+[node name="plataforma7" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(1981, -234)
+
+[node name="plataforma8" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(-427, -159)
+
+[node name="plataforma9" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(-306, 262)
+
+[node name="plataforma10" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(-50, -437)
+
+[node name="plataforma11" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(-346, -731)
+
+[node name="plataforma12" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(336, -949)
+
+[node name="plataforma13" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(2019, -730)
+
+[node name="plataforma14" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(1597, -946)
+
+[node name="plataforma15" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(-769, -474)
+
+[node name="plataforma16" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(-48, -1227)
+
+[node name="plataforma17" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(1097, -1197)
+
+[node name="plataforma18" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(-615, -988)
+
+[node name="plataforma19" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(1613, -492)
+
+[node name="plataforma20" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(2032, -1202)
+
+[node name="plataforma21" parent="Node" instance=ExtResource("3_d6chm")]
+position = Vector2(520, -1393)
+
+[connection signal="body_entered" from="llegada/Area2D" to="Personaje" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="llegada/Area2D" to="Controlador" method="_on_area_2d_body_entered"]
+[connection signal="caer" from="Personaje" to="Controlador" method="_on_personaje_caer"]

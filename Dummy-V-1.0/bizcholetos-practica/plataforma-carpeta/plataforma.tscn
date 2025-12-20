@@ -8,10 +8,13 @@ size = Vector2(255, 86)
 [node name="plataforma" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visibility_layer = 5
 position = Vector2(127.500015, 42.5)
-scale = Vector2(255.00002, 85)
+scale = Vector2(255.00002, 34.52)
 texture = SubResource("CanvasTexture_6ufo2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 5
 position = Vector2(127.5, 43)
+scale = Vector2(1, 0.40611768)
 shape = SubResource("RectangleShape2D_oqwfx")

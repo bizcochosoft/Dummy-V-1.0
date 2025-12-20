@@ -1,10 +1,12 @@
 extends CharacterBody2D
 class_name personaje
 
-@export var gravity = 300
-@export var jump_velocity = 400
+@export var gravity = 1200
+@export var jump_velocity = 900
 @export var speed = 200
+@export var demasiado_abajo = 950
 
+signal caer
 
 func _physics_process(delta):
 	
@@ -22,4 +24,11 @@ func _physics_process(delta):
 	if jump_pressed and is_on_floor():
 		velocity.y = velocity.y - jump_velocity
 	
+	if position.y > demasiado_abajo:
+		queue_free()
+		caer.emit()
+	
 	move_and_slide()
+
+func _on_area_2d_body_entered(body):
+	print("El ", body.name, " ha entrado en el área")

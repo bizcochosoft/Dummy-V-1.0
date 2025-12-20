@@ -1,0 +1,11 @@
+res://intro/intro.tscn
+res://intro/intro.gd
+res://escena_final/escena-final.tscn
+res://escena-inicial/escena-inicial.tscn
+res://plataforma-carpeta/plataforma.tscn
+res://nivel_1-carpeta/nivel_1.tscn
+res://nivel-1/nivel-1.tscn
+res://personaje-carpeta/personaje.gd
+res://escena_final/escena_final.gd
+res://nivel-1/controlador.gd
+res://personaje-carpeta/personaje.tscn
