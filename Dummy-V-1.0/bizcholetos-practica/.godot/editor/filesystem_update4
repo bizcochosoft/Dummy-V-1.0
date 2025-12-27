@@ -1,4 +1,3 @@
-res://nivel-1/controlador.gd
+res://nivel-1/nivel-1.tscn
+res://personaje-carpeta/personaje.tscn
 res://personaje-carpeta/personaje.gd
-res://escena_final/escena-final.tscn
-res://escena_final/escena_final.gd
